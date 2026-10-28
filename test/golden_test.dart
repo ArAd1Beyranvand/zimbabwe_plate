@@ -28,14 +28,26 @@ void main() {
       <String, (PlateSpec, PlateTheme, String)>{
         'private': (ZimbabwePlates.row, ZimbabweThemes.yellow, 'ADV 5517'),
         'private_white': (ZimbabwePlates.row, ZimbabweThemes.white, 'ABC 1234'),
-        'commercial': (ZimbabwePlates.row, ZimbabweThemes.commercial, 'AED 1733'),
-        'stacked': (ZimbabwePlates.stacked, ZimbabweThemes.yellowStacked, 'ABH 2411'),
+        'commercial': (
+          ZimbabwePlates.row,
+          ZimbabweThemes.commercial,
+          'AED 1733',
+        ),
+        'stacked': (
+          ZimbabwePlates.stacked,
+          ZimbabweThemes.yellowStacked,
+          'ABH 2411',
+        ),
       };
 
-  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c in cases.entries) {
+  for (final MapEntry<String, (PlateSpec, PlateTheme, String)> c
+      in cases.entries) {
     testWidgets(c.key, (tester) async {
       final (PlateSpec spec, PlateTheme theme, String values) = c.value;
-      final PlateController controller = PlateController.fromValues(spec, values.split(' '));
+      final PlateController controller = PlateController.fromValues(
+        spec,
+        values.split(' '),
+      );
       await tester.pumpWidget(
         MaterialApp(
           home: Scaffold(
@@ -57,7 +69,10 @@ void main() {
         ),
       );
       await tester.pumpAndSettle();
-      await expectLater(find.byType(PlateView), matchesGoldenFile('goldens/zw_${c.key}.png'));
+      await expectLater(
+        find.byType(PlateView),
+        matchesGoldenFile('goldens/zw_${c.key}.png'),
+      );
       await tester.pumpWidget(const SizedBox.shrink());
       controller.dispose();
     });
