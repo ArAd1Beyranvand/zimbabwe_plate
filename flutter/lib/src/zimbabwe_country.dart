@@ -7,7 +7,6 @@ import 'zimbabwe_colors.dart';
 abstract final class ZimbabweCountry {
   static const PlateCountry zimbabwe = PlateCountry(
     code: 'zw',
-    captionLines: <String>[],
     panelColor: ZimbabweColors.white,
     panelTextColor: ZimbabweColors.black,
   );

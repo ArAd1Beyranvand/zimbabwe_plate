@@ -4,9 +4,6 @@
 /// white and red on white, with an advisory validator.
 library;
 
-// TODO(py): [D5] one module `plates.countries.zimbabwe`; assets via importlib.resources.
-// TODO(ts): [D5] one subpath export `./countries/zimbabwe`; tree-shakable.
-// TODO(kt): [D5] package `countries.zimbabwe` in the countries module.
 export 'package:plate_alphabet/plate_alphabet.dart' show ZimbabweAlphabets;
 
 export 'src/zimbabwe_colors.dart';

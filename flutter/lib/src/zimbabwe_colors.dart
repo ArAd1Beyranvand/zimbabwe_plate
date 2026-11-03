@@ -29,6 +29,4 @@ abstract final class ZimbabweColors {
 
   /// Unsampled black ink for the white plate.
   static const Color black = Color(0xFF1C1E1E); // CALIBRATE
-
-  static const Color inactive = Color(0xFFB0B0B0);
 }

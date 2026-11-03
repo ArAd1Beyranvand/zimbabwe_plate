@@ -36,7 +36,6 @@ abstract final class ZimbabweThemes {
 PlateTheme _ink(Color field, Color ink) => PlateTheme.monochrome(
   field: field,
   ink: ink,
-  inactive: ZimbabweColors.inactive,
   borderWidthRatio: 0.02,
   plateRadiusRatio: 0.04,
 );

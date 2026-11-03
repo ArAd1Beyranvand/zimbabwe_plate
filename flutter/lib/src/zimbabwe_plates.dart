@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:plate_alphabet/plate_alphabet.dart';
 import 'package:plate_core/plate_core.dart';
 
@@ -32,8 +30,7 @@ abstract final class _Layout {
   static const double letterCx = 60.1, letterPitch = 58.9;
   static const double digitCx = 299.5, digitPitch = 56;
 
-  static const double stackWidth = 340, stackHeight = 215;
-  static const double stackBox = 100;
+  static const double stackWidth = 340, stackHeight = 215, stackBox = 100;
   static const double stackLetterCy = 61.1, stackLetterCx = 126.4;
   static const double stackLetterPitch = 69;
   static const double stackDigitCy = 156.8, stackDigitCx = 95.8;
@@ -103,11 +100,13 @@ abstract final class ZimbabwePlates {
     double pitch,
     double cy,
     double box,
-  ) => PlateSlot(
-    alphabet: alphabet,
-    box: PlateBox(firstCx - pitch / 2, cy - box / 2, count * pitch, box),
-    length: count,
-    spacing: max(0, pitch - 0.6 * 0.72 * box),
+  ) => plateRun(
+    alphabet,
+    count,
+    left: firstCx - pitch / 2,
+    top: cy - box / 2,
+    pitch: pitch,
+    height: box,
   );
 
   static PlateSpec _spec(
@@ -121,12 +120,7 @@ abstract final class ZimbabwePlates {
     country: ZimbabweCountry.zimbabwe,
     canvasWidth: width,
     canvasHeight: height,
-    panel: const PlatePanel(box: PlateBox(0, 0, 0, 0)),
-    noPanel: true,
     slots: <PlateSlot>[letters, serial],
-    textGroups: <PlateTextGroup>[
-      PlateTextGroup(<int>[0], key: 'letters'),
-      PlateTextGroup(<int>[1], key: 'serial'),
-    ],
+    textGroups: PlateTextGroup.perSlot(<String>['letters', 'serial']),
   );
 }

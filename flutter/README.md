@@ -6,13 +6,24 @@ GO VEGAN 🌱
 
 From the mighty people of Iran to the resilient people of Zimbabwe to view examples:
 
-https://platexample.ir/#/discover/zimbabwe
+https://platexample.ir/#/discover/zimbabwe:flutter
 
 # zimbabwe_plate
 
-Zimbabwe's licence plates for the `plate_core` library. Three letters and four digits on one row or stacked, in black on yellow or white and red on white, with an advisory validator.
+Zimbabwe's licence plates for plate_core — three letters and four digits on one row or stacked, in black on yellow or white and red on white, with an advisory validator.
 
-## Install
+## Languages
+
+| Language | Folder | Example |
+| --- | --- | --- |
+| Flutter / Dart | [`flutter/`](https://github.com/ArAd1Beyranvand/zimbabwe_plate/tree/main/flutter) | [platexample](https://platexample.ir/#/discover/zimbabwe:flutter) |
+| Kotlin | [`kotlin/`](https://github.com/ArAd1Beyranvand/zimbabwe_plate/tree/main/kotlin) | [platexample](https://platexample.ir/#/discover/zimbabwe:kotlin) |
+| Python | [`python/`](https://github.com/ArAd1Beyranvand/zimbabwe_plate/tree/main/python) | [platexample](https://platexample.ir/#/discover/zimbabwe:python) |
+| TypeScript | [`typescript/`](https://github.com/ArAd1Beyranvand/zimbabwe_plate/tree/main/typescript) | [platexample](https://platexample.ir/#/discover/zimbabwe:typescript) |
+
+## Quick start
+
+### Install
 
 ```yaml
 dependencies:
@@ -20,7 +31,7 @@ dependencies:
   zimbabwe_plate: ^0.1.0
 ```
 
-## Use
+### Use
 
 ```dart
 import 'package:plate_core/plate_core.dart';
@@ -35,12 +46,28 @@ PlateCanvas(
 );
 ```
 
-## Contains
+## Specs
 
-- `ZimbabweCountry` — country panel: `zimbabwe`.
-- `ZimbabwePlates` — 2 plate specs: `row`, `stacked`.
-- `ZimbabweThemes` — 4 themes: `yellow`, `yellowStacked`, `white`, `commercial`.
-- `ZimbabweValidator` — advisory validator; flags the frame, never blocks a keystroke.
+Each spec is one plate layout.
+
+- `ZimbabwePlates.row`
+- `ZimbabwePlates.stacked`
+
+## Themes
+
+- `ZimbabweThemes.yellow`
+- `ZimbabweThemes.yellowStacked`
+- `ZimbabweThemes.white`
+- `ZimbabweThemes.commercial`
+
+## Change it
+
+`PlateCanvas` takes `spec:` (an entry of `ZimbabwePlates`) and `theme:` (an entry of `ZimbabweThemes`). Set `validator:` to `ZimbabweValidator()` and `autoValidate: true` to show validation hints.
+
+## Also included
+
+- `ZimbabweCountry` — the country panel.
+- `ZimbabweValidator` — the plate validator.
 
 ## Plates
 
@@ -58,3 +85,6 @@ no Israel-specific value.
 
 Painted by [`plate_core`](https://pub.dev/packages/plate_core); alphabets shared through [`plate_alphabet`](https://pub.dev/packages/plate_alphabet); optional character picker in [`plate_keypad`](https://pub.dev/packages/plate_keypad).
 
+## License
+
+See [LICENSE](https://github.com/ArAd1Beyranvand/zimbabwe_plate/blob/main/LICENSE).
